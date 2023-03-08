@@ -2,11 +2,11 @@ venv/
 
 *.pyc
 __pycache__/
+.uploads/
 
 instance/
 
 .pytest_cache/
-.uploads/
 .coverage
 htmlcov/
 
