@@ -1,0 +1,91 @@
+{% extends 'dashboardbase.html' %}
+
+{% block content %}
+
+<!-- container starts here -->
+<div>
+  
+  <div class="container-fluid">
+<div class="card" style="margin-left: 20px; margin-right:40px; padding-bottom: 50px; border:none;">
+    <div class="row">
+      <!-- col 1 starts here-->
+      <div class="col-7">
+        <!-- upload file starts here -->
+        <div id="upload_file">
+  <div class="mb-3" style="margin-left:50px; width:500px">
+  <label for="formFile" class="form-label" style="margin-bottom: 30px; font-size:20px; font-weight: 600;">Select a file to upload resumes:</label>
+  <input class="form-control" type="file" id="formFile">
+    <div class="text-muted" style="margin-top:20px;">Files may be up to 50 MB, and .xls, .xlsx, .csv or .vcf formats.</div>
+</div>
+<!-- buttons -->
+                <button id="upload_buttons_fix" style="margin-left: 50px;">Cancel</button>
+        <button id="upload_buttons_fix" style="margin-left:20px;" onclick="location.href='employeeattritionresult.html';"> Next</button>
+        <!-- buttons ends here -->
+</div>
+
+<!-- HTML form for multiple file uploads -->
+<form method="post" action="{{ url_for('blog.upload') }}" enctype="multipart/form-data">
+  <input type="file" name="files" multiple>
+  <input type="submit" value="Upload">
+</form>
+
+<!-- upload file ends here -->
+        <div style="padding-left: 60px; padding-right: 60px;">
+        <!-- maximum limits -->
+        <span id="uploadfiles_guidelines_headings">Maximum limits</span>
+        <li id="uploadfiles_guidelines_content">Enterprise - 20000 per batch.</li>
+        <li id="uploadfiles_guidelines_content">Skip/Overwrite can be performed with a maximum of 5000 records.</li>
+        <!-- Important notes -->
+        <span id="uploadfiles_guidelines_headings">Important notes</span>
+        <li id="uploadfiles_guidelines_content">Duplicates will be verified based on "Email" field.</li>
+        <li id="uploadfiles_guidelines_content">First row of the given file will be treated as field names.</li>
+        <li id="uploadfiles_guidelines_content">Please ensure your file size does not exceed 50 MB.</li>
+        <li id="uploadfiles_guidelines_content">Before importing the data all duplicate records will be ignored from the XLS/CSV file.</li>
+        <li id="uploadfiles_guidelines_content">While checking for duplicate records, you can overwrite, clone, or skip the duplicates.</li>
+        <li id="uploadfiles_guidelines_content">In case of XLS file, only MS Excel 97 - 2003 formats are suppported.</li>
+        </div>
+  
+
+      </div>
+      <!-- col 1 ends here -->
+      <!-- col 2 starts here -->
+      <div class="col-5">
+        <!-- <img src="images/uploadimg_csv.png" style="width:9.5cm; height: 18.5cm;"> -->
+        <img src="{{ url_for('static', filename='images/upimg_csv.png') }}" style="width: 30rem;">
+      </div>
+      <!-- col 2 ends here -->
+    </div>
+<!-- card ends here -->
+  </div>
+
+</div>
+<!-- container ends here -->
+<style type="text/css">
+    #upload_buttons_fix{
+    outline: none;
+    border: none;
+    background-color: #FF745C;
+    color: whitesmoke;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  #uploadfiles_guidelines_headings{
+    font-weight: 500;
+    color: #545454;
+    
+  }
+  #uploadfiles_guidelines_content{
+    color: #737373;
+    font-size: 15px;
+  }
+</style>
+</div>
+<!-- main menu ends here -->
+</body>
+</html>
+
+{% endblock %}

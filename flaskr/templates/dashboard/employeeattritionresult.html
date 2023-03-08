@@ -1,0 +1,103 @@
+{% extends 'dashboardbase.html' %}
+
+{% block content %}
+
+<!-- container_fluid starts here-->
+ <div class="container-fluid">
+
+<!-- div grid card starts here -->
+	<!-- row starts here -->
+<div class="row">
+  	<!-- col 1 starts here-->
+  <div class="col">
+  	<!-- card 1 -->
+    <div class="card">
+    	<div id="myChart1" style="width:100%; max-width:600px; height:550px;"></div>
+
+<script>
+google.charts.load('current',{packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+// Set Data
+var data = google.visualization.arrayToDataTable([
+  ['Employee Count', 'Atrrition'],
+  [550,7],[500,8],[450,8],[400,9],[350,9],
+  [300,9],[250,10],[200,11],
+  [150,14],[100,14],[50,15]
+]);
+// Set Options
+var options = {
+  title: 'Attrition of overall Employee Count',
+  hAxis: {title: 'Employee Count'},
+  vAxis: {title: 'Attrition Based on month'},
+  legend: 'none'
+};
+// Draw
+var chart = new google.visualization.LineChart(document.getElementById('myChart1'));
+chart.draw(data, options);
+}
+</script>
+
+    </div>
+  </div>
+  	<!-- col 1 ends here-->
+
+  	  	<!-- col 2 starts here -->
+  <div class="col">
+  	<!-- card 1 -->
+    <div class="card">
+    	<div id="myChart2" style="width:100%; max-width:600px; height:500px; padding-left: 30px;"></div>
+    	<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Job Roles', 'employee count'],
+  ['Sales Executive',55],
+  ['Research Scientist',49],
+  ['Team Manager',44],
+  ['Sales Representative',24],
+  ['Research Director',15],
+  ['Human Resources',90],
+]);
+
+var options = {
+  title:'Job Attrition based on the Job roles ( Department )'
+};
+
+var chart = new google.visualization.BarChart(document.getElementById('myChart2'));
+  chart.draw(data, options);
+}
+</script>
+    </div>
+  </div>
+  	<!-- col 2 ends here -->
+
+</div>
+	<!-- row ends here -->
+<!-- div grid card ends here -->
+
+</div>
+<!-- container-fluid ends here -->
+
+
+</div>
+<!-- main menu ends here -->
+<style type="text/css">
+  #main_card{
+    margin-left: 60px;
+    margin-bottom: 20px;
+    border: none;
+  }
+  #card_body_wording{
+    font-weight: 500;
+    text-align: center;
+  }
+</style>
+
+</body>
+</html>
+
+{% endblock %}

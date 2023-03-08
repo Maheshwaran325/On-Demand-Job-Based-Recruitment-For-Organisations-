@@ -1,0 +1,54 @@
+{% extends 'authbase.html' %}
+
+  <!-- navbar content ends here -->
+
+<!-- nav bar ends here -->
+{% block content %}
+<!-- Div container  -->
+<div class="container-fluid">
+<!-- login card starts here -->
+<div class="card" id="login_card">
+  <div class="card-body">
+    <!-- row -->
+    <div class="row">
+      <!-- col-1 -->
+      <div class="col">
+      
+<form id="login_form">
+  <h3 class="text-center" id="login_heading">Login to continue</h3>
+  <div class="mb-3">
+
+    <label id="labels" for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label id="labels" for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div id="emailHelp" class="form-text"><a href="" style="text-decoration:none;">Forget password?</a></div>
+
+  <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Login</button>
+
+<div id="emailHelp" class="form-text" style="margin-top:20px;"> First time user? Start your account here -> <a href="{{ url_for('auth.register') }}" style="text-decoration:none;">Signup</a></div>
+
+</form>
+
+      </div>
+      <!-- col-1 -->
+      <!-- col-2 -->
+      <div class="col">
+          <img id="login_img" src="{{ url_for('static', filename='images/homeone.png') }}">
+      </div>
+      <!-- col-2 -->
+    </div>
+    <!-- row ends here -->
+  </div>
+</div>
+<!-- login card ends here -->
+</div>
+<!-- div container ends here -->
+
+</body>
+</html>
+
+{% endblock %}

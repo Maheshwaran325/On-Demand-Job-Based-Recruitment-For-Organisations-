@@ -1,0 +1,86 @@
+	.navbar_conditions{
+		height: 70px;
+	}
+	.nav-link{
+		margin-left: 15px;
+		font-size: 16px;
+		font-weight: 500;
+		color: #070339;
+	}
+	.nav-link:hover{
+		border-bottom: 2px solid;
+		transition-duration: 5s ease;
+		transition-delay: 0.2s ease;
+	}
+	.login_btn{
+		outline: none;
+		border: none;
+		border-radius: 20px;
+		width: 170px;
+		height: 40px;
+        background-color: #2A02D3;
+        color: white;
+	}
+	.login_btn:hover{
+		background-color: #2A02D3;
+	}
+	.bi-arrow-left-short{
+		font-size: 25px;
+
+	}
+	.try_btn{
+		outline: none;
+		border: none;
+		border-radius: 5px;
+		width: 170px;
+		height: 40px;
+        background-color: #2A02D3;
+        color: white;
+	}
+	#main_wordings{
+		font-size: 50px;
+		padding-left: 100px;
+		margin-top: 70px;
+	}
+	#wording_under_main{
+		padding-left: 100px;
+		padding-right: 30px;
+		margin-top: 30px;
+		font-size: 18px;
+		font-weight: 400px;
+	}
+	#main_wording_card{
+		width: 470px;
+		margin-left: 100px;
+		margin-top: 30px;
+		outline: none;
+		border: none;
+	}
+	#login_card{
+  width: 70rem;
+  margin-left: 190px;
+  border-radius: 2px;
+  border: none;
+  height: 540px;
+}  
+#signup_img{
+  margin-top: 30px;
+  margin-right: 20px;
+  width: 30rem;
+}
+#login_form{
+  padding: 40px;
+  margin-top: 4px;
+}
+#login_heading{
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-family: ubuntu;
+}
+#labels{
+  font-weight: 500;
+}
+#login_img{
+  margin-top: 30px;
+  margin-right: 20px;
+}

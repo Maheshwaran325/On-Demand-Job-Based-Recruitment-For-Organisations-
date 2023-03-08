@@ -1,0 +1,74 @@
+{% extends 'dashboardbase.html' %}
+
+{% block content %}
+
+<!-- container starts here -->
+<div>
+  
+  <div class="container-fluid">
+<div class="card" style="margin-left: 20px; margin-right:40px; padding-bottom: 50px; border:none;">
+    <div class="row">
+      <!-- col 1 starts here-->
+      <div class="col-7">
+        <!-- upload file starts here -->
+        <div id="upload_file">
+  <div class="mb-3" style="margin-left:50px; width:500px">
+  <label for="formFile" class="form-label" style="margin-bottom: 30px; font-size:20px; font-weight: 600;">Select a file to upload dataset:</label>
+  <input class="form-control" type="file" id="formFile">
+    <div class="text-muted" style="margin-top:20px;">Files may be up to 50 MB, and .xls, .xlsx, .csv or .vcf formats.</div>
+</div>
+<!-- buttons -->
+                <button id="upload_buttons_fix" style="margin-left: 50px;">Cancel</button>
+        <button id="upload_buttons_fix" style="margin-left:20px;" onclick="location.href='employeeattritionresult.html';"> Next</button>
+        <!-- buttons ends here -->
+</div>
+
+<!-- HTML form for multiple file uploads -->
+<form action="/predict" method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input type="submit" value="Submit">
+</form>
+
+      </div>
+      <!-- col 1 ends here -->
+      <!-- col 2 starts here -->
+      <div class="col-5">
+        <!-- <img src="images/uploadimg_csv.png" style="width:9.5cm; height: 18.5cm;"> -->
+        <img src="{{ url_for('static', filename='images/upimg_csv.png') }}" style="width: 30rem;">
+      </div>
+      <!-- col 2 ends here -->
+    </div>
+<!-- card ends here -->
+  </div>
+
+</div>
+<!-- container ends here -->
+<style type="text/css">
+    #upload_buttons_fix{
+    outline: none;
+    border: none;
+    background-color: #FF745C;
+    color: whitesmoke;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  #uploadfiles_guidelines_headings{
+    font-weight: 500;
+    color: #545454;
+    
+  }
+  #uploadfiles_guidelines_content{
+    color: #737373;
+    font-size: 15px;
+  }
+</style>
+</div>
+<!-- main menu ends here -->
+</body>
+</html>
+
+{% endblock %}

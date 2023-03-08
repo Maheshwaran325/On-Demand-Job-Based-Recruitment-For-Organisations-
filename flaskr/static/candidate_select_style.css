@@ -1,0 +1,18 @@
+  #menulist-group-item{
+    background-color: transparent;
+    color: whitesmoke;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+   #main_logo_page{
+    color: whitesmoke;
+    margin-left: 20px;
+    margin-top: 20px;
+   }
+   #underline{
+    border-bottom: 1px solid whitesmoke;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+   }

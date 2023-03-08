@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uploaded Files</title>
+</head>
+<body>
+    <h1>Uploaded Files</h1>
+    <ul>
+        {% for filename in filenames %}
+            <li>{{ filename }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('blog.parsed_data') }}">See Parsed Data</a>
+</body>
+</html>

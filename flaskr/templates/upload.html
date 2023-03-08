@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resumes</title>
+</head>
+<body>
+    <h1>Upload Resumes</h1>
+    <form method="post" action="{{ url_for('blog.upload_file') }}" enctype="multipart/form-data">
+        <input type="file" name="files" multiple>
+        <input type="submit" value="Upload">
+        <!-- <input type=button href="{{ url_for('blog.upload_file') }}"value='click here'> -->
+    </form>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+</body>
+</html>

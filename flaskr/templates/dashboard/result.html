@@ -1,0 +1,38 @@
+{% extends "dashboardbase.html" %}
+
+{% block content %}
+
+<style>
+
+  .plots-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+  
+  .plot {
+      width: 45%;
+      margin-bottom: 20px;
+  }
+</style>
+
+<body>
+  <h2 style="text-align: center;">Attrition Results</h2>
+  <div class="plots-container">
+    <div class="plot">
+          <img src="data:image/png;base64,{{ plot_data4 }}" />
+      </div>
+      <div class="plot">
+          <img src="data:image/png;base64,{{ plot_data1 }}" />
+      </div>
+      <div class="plot">
+          <img src="data:image/png;base64,{{ plot_data2 }}" />
+      </div>
+      <div class="plot">
+          <img src="data:image/png;base64,{{ plot_data3 }}" />
+      </div>
+  </div>
+</body>
+
+{% endblock %}

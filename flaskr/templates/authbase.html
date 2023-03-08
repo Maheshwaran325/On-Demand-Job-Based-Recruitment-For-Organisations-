@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quality-Lane </title>
+
+	<!-- bootstrap links starts here -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<!-- bootstrap icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<!-- style sheet included -->
+<link rel="stylesheet"  href="{{ url_for('static', filename='style.css' ) }}">
+
+<!-- font style -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+</head>
+
+
+<body style="padding: 0; margin: 0; ">
+  <!-- nav bar starts here -->
+  <div id="">
+    <nav class="navbar navbar_conditions navbar-expand-lg shadow-sm p-3 mb-5 bg-body rounded">
+      <!-- Navbar content starts here -->
+      <div class="container">
+        <!-- nav brand  -->
+        <a class="navbar-brand" href="#">Quality-Lane</a>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- nav items -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('auth.index') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Find jobs</a>
+        </li>
+        <!-- drop down menu starts -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           HR Services offered
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url_for('auth.login') }}">Calculate Employee Attrition</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ url_for('auth.login') }}">Hire Candidates</a></li>
+          </ul>
+        </li>
+        <!-- drop down menu ends -->
+      </ul>
+      
+<!-- signup and login  --><span class="nav-link"><a href="{{ url_for('auth.login') }}" style="text-decoration: none; color: #070339;">Login</a></span><span class="nav-link"><a href="{{ url_for('auth.register') }}" style="text-decoration: none; color: #070339;">Signup</a></span>
+
+      <div class="d-flex" style="margin-left: 30px;">
+      	<!-- Get free trial button starts here -->
+        <button class="login_btn">
+        			<span><a href="{{ url_for('auth.login') }}" style="text-decoration: none; color: #fff;">Get Free Trail</a></span> 	
+        </button> 
+        <!-- Get free trial button ends here -->
+      </div>
+
+
+    </div>
+  </div>
+  <!-- navbar content ends here -->
+</nav>
+
+</div>
+<!-- nav bar ends here -->
+{% block content %}{% endblock %}

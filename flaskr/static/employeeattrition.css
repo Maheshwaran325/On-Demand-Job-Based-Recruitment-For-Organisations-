@@ -1,0 +1,39 @@
+  #menulist-group-item{
+    background-color: transparent;
+    color: whitesmoke;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+   #main_logo_page{
+    color: whitesmoke;
+    margin-left: 20px;
+    margin-top: 20px;
+   }
+   #underline{
+    border-bottom: 1px solid whitesmoke;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+   }
+     #main_card{
+    margin-left: 60px;
+    margin-bottom: 20px;
+    border: none;
+  }
+  #card_body_wording{
+    font-weight: 500;
+    text-align: center;
+  }
+  #enterdetails_buttons{
+    outline: none;
+    border: none;
+    background-color: #FF745C;
+    color: whitesmoke;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-left: 70px;
+  }

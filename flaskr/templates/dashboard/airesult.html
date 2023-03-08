@@ -1,0 +1,48 @@
+{% extends 'dashboardbase.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Matching Candidates</h2>
+    <hr>
+    {% if matches %}
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <table class="table table-bordered table-striped ">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Matching Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for match in matches %}
+                <tr>
+                  <td>{{ match[0] }}</td>
+                  <td>{{ match[1] }}</td>
+                  <td>{{ match[2] }}</td>
+                  <td>
+                    {% if match[3] > 0 %}
+                    <div class="progress" style="margin-bottom: 0.5rem;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" {{ match[3] }}%; aria-valuenow="{{ match[3] }}" aria-valuemin="0" aria-valuemax="100">{{ match[3] }}%</div>
+                    </div>
+                  {% else %}
+                    <div class="progress" style="margin-bottom: 0.5rem;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                  {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {% else %}
+      <div class="alert alert-warning">
+        No candidates found for the selected job role.
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

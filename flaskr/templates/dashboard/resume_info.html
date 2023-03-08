@@ -1,0 +1,82 @@
+{% extends 'dashboardbase.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>File Name</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>skills</th>
+        <th>company</th>
+       
+        
+    </tr>
+    {% for row in data %}
+        <tr>
+            <td>
+                <span><a href="{{url_for('blog.uploaded_file', filename=row[0])}}" class="view-button"target="_blank">View</a></span>
+                <span><a href="{{url_for('blog.uploaded_file', filename=row[0])}}" class="download-button" download>Download</a></span>
+            </td>
+            <!-- <td> <a href="javascript:void(0);" onclick="window.open('{{url_for('blog.uploaded_file', filename=row[0])}}', '_blank', 'width=800,height=600')">View</a></td> -->
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<style>
+    
+    table {
+        /* border-collapse: collapse; */
+        margin-left: 12px;
+        margin-right: 20px;
+        scroll-margin-block: bottom;
+        display: flex;
+     flex-wrap: wrap;
+    overflow: scroll;
+    height: 580px;
+    
+
+    }
+    
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+
+.view-button, .download-button {
+   
+    padding: 8px 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    /* float: left; */
+    display: inline-block;
+}
+
+.view-button {
+    padding-bottom: 5px;
+    margin-bottom: 5px; /* add padding to the right side of the button */
+}
+.download-button {
+    margin-top: 1px; 
+    background-color: green;
+}
+
+
+
+</style>
+{% endblock %}

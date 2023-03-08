@@ -1,0 +1,98 @@
+{% extends 'dashboardbase.html' %}
+
+{% block content %}
+<!-- container starts here -->
+<div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-7">
+        <div class="row">
+        <!-- card 1 starts here-->
+        
+        <div class="card shadow p-3 mb-5 bg-body rounded" id="main_card" style="width: 19rem; height: 6cm;">
+          <a href="predictemployeeattrition.html" style="text-decoration: none; color:black;">
+  <img src="{{ url_for('static', filename='images/employeeattririon.png') }}" class="card-img-top" alt="..." style="height: 4cm;">
+  <div class="card-body">
+    <p id="card_body_wording">Calculate Employee Attririon</p>
+  </div>
+  </a>
+</div>
+
+        <!-- card 1 ends here -->
+
+        <!-- card 2 starts here -->
+         <div class="card shadow p-3 mb-5 bg-body rounded" id="main_card" style="width: 19rem; height: 6cm;">
+          <a href="recent.html" style="text-decoration: none; color:black;">
+  <img src="{{ url_for('static', filename='images/ongoinghiring.png') }}" class="card-img-top" alt="..." style="height: 4cm;">
+  <div class="card-body">
+    <p id="card_body_wording">Ongoing Hiring Process</p>
+  </div>
+  </a>
+</div>
+        <!-- card 2 ends here -->
+
+        <!-- card 3 starts here -->
+         <div class="card shadow p-3 mb-5 bg-body rounded" id="main_card" style="width: 19rem; height: 6cm;">
+          <a href="recentapplication.html" style="text-decoration: none; color:black;">
+  <img src="{{ url_for('static', filename='images/recentapplications.png') }}" class="card-img-top" alt="..." style="height: 4cm;">
+  <div class="card-body">
+    <p id="card_body_wording">Recent Applications</p>
+  </div>
+  </a>
+</div>
+        <!-- card 3 ends here -->
+
+        <!-- card 4 starts here -->
+         <div class="card shadow p-3 mb-5 bg-body rounded" id="main_card" style="width: 19rem; height: 6cm;">
+  <img src= "{{ url_for('static', filename='images/companyprofile.png') }}" class="card-img-top" alt="..." style="height: 4cm;">
+  <div class="card-body">
+    <p id="card_body_wording">Company Profile</p>
+  </div>
+</div>
+        <!-- card 4 ends here -->
+        </div>
+      </div>
+      <div class="col-2">
+        <!-- notification card starts here-->
+      <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 26rem;margin-left: 30px;border: none;">
+  <img src="{{ url_for('static', filename='images/notification_img.png') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">Analytics Service</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Last attrition calculated on</li>
+    <li class="list-group-item">Candidates Available </li>
+    <li class="list-group-item">Account changes</li>
+    <li class="list-group-item">Notifications Received</li>
+    <li class="list-group-item">Job Applications Received</li>
+    <li class="list-group-item">Hired Candidates</li>
+
+  </ul>
+</div>
+        <!-- notification card ends here -->
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- container ends here -->
+
+</div>
+<!-- main menu ends here -->
+<style type="text/css">
+  #main_card{
+    margin-left: 60px;
+    margin-bottom: 20px;
+    border: none;
+  }
+  #card_body_wording{
+    font-weight: 500;
+    text-align: center;
+  }
+</style>
+
+</body>
+</html>
+
+{% endblock %}
